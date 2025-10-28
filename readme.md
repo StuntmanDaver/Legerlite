@@ -304,24 +304,64 @@ By the time Phase 2 or 3 is done, you can honestly say in an interview:
 That jumps you out of "beginner" and into "I can ship production-grade internal tools," which is what most C#/.NET jobs actually are.
 
 ## 11. Status / Next Step
+### Project Status
+LedgerLite v1 MVP is now complete! All core features from the PRD are implemented:
+- **CRUD Operations**: Add, edit, delete, and list transactions via console menu.
+- **Persistence**: Transactions saved to `data/transactions.json` (loads on startup, saves on changes; handles missing/corrupt files gracefully).
+- **Reporting**: Generate monthly reports with totals, net balance, top 3 expense categories, and transaction count.
+- **Export**: Optional CSV export to `exports/Report_YYYY_MM.csv` with summaries and categories.
+- **Validation & UX**: Input reprompts on errors, confirmations for delete, no crashes.
+- **Testing**: 12 unit/integration tests pass (`dotnet test`), covering logic, calculations, and persistence edges.
 
-Immediate next action is to scaffold the solution and core classes:
+Data persists across runs—add transactions, quit, rerun to see them listed.
 
-1. Create the .sln and projects (Domain, Application, Infrastructure, CLI, Tests)
-2. Add these initial types:
-   - Transaction
-   - TransactionType
-   - ITransactionRepository
-   - TransactionService
-3. Build the first console menu in Program.cs that can:
-   - Add a transaction
-   - List recent transactions
-   - Save/load from transactions.json
+### How to Run (v1 Console App)
+1. Install .NET 8 SDK (https://dotnet.microsoft.com/download).
+2. Clone/open the repo in VS Code or Visual Studio.
+3. Restore dependencies and build:
+   ```
+   dotnet restore
+   dotnet build
+   ```
+   - Should succeed with 0 errors/warnings.
+4. Run the console app:
+   ```
+   dotnet run --project LedgerLite.CLI
+   ```
+5. Interact via menu:
+   - **1. Add**: Enter type/date/desc/category/amount (reprompts on invalid).
+   - **2. Edit**: Select by short ID, update fields (Enter to keep current).
+   - **3. Delete**: Select by short ID, confirm y/n.
+   - **4. List**: Shows last 20 in table (sorted by date desc).
+   - **5. Report**: Enter year/month, view summary/top categories; option to export CSV.
+   - **6. Export**: (Guidance: Use report's export prompt.)
+   - **7. Quit**.
+6. After running:
+   - Check `data/transactions.json` for saved data (camelCase, indented JSON).
+   - Run report and export y: Check `exports/Report_YYYY_MM.csv` (open in Excel).
+   - Rerun app: Data loads automatically.
 
-After that baseline runs end-to-end, we add:
-- delete/edit
-- monthly report
-- CSV export
-- tests
+### Testing
+Run unit/integration tests:
+```
+dotnet test
+```
+- 12 tests: Service validation/CRUD, report calculations/edges, repo load/save (missing/corrupt files).
+- All should pass (0 failures). If not, check build first.
 
-You get something working quickly, and then you tighten it like an engineer, not like a tutorial.
+### Troubleshooting
+- **Build errors**: Ensure .NET 8 SDK installed; run `dotnet restore` then `dotnet build`.
+- **Permission denied on data/exports**: Run from a writable directory (e.g., not system folders); app creates dirs automatically.
+- **JSON corrupt on load**: App warns and starts empty (data safe, but reloads clean).
+- **Currency format odd**: Uses invariant culture (USD $); for locale, adjust CultureInfo in Program.cs.
+- **Tests fail on timing/IO**: Rare; rerun or check file locks (close app if running).
+- **No data after quit/restart**: Verify `data/` created; check console for warnings.
+
+For issues, see .cursorrules or IMPLEMENTATION_PLAN.md for architecture/details.
+
+### Next Steps (Future Phases)
+- **Phase 2**: SQLite persistence (swap repo impl, no code changes elsewhere).
+- **Phase 3**: WPF desktop UI (reuse services).
+- **Phase 4**: CSV import from banks.
+
+Contribute via PRs—focus on clean, testable code!

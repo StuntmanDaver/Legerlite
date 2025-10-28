@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LedgerLite.Application\LedgerLite.Application.csproj" />
+    <ProjectReference Include="..\LedgerLite.Infrastructure\LedgerLite.Infrastructure.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

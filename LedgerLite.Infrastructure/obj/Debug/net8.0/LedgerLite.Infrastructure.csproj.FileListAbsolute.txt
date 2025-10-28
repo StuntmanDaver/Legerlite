@@ -1,4 +1,5 @@
 /Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Infrastructure/bin/Debug/net8.0/LedgerLite.Infrastructure.deps.json
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Infrastructure/bin/Debug/net8.0/LedgerLite.Infrastructure.runtimeconfig.json
 /Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Infrastructure/bin/Debug/net8.0/LedgerLite.Infrastructure.dll
 /Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Infrastructure/bin/Debug/net8.0/LedgerLite.Infrastructure.pdb
 /Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Infrastructure/bin/Debug/net8.0/LedgerLite.Application.dll
@@ -10,8 +11,10 @@
 /Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Infrastructure/obj/Debug/net8.0/LedgerLite.Infrastructure.AssemblyInfoInputs.cache
 /Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Infrastructure/obj/Debug/net8.0/LedgerLite.Infrastructure.AssemblyInfo.cs
 /Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Infrastructure/obj/Debug/net8.0/LedgerLite.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Infrastructure/obj/Debug/net8.0/LedgerLite.Infrastructure.sourcelink.json
 /Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Infrastructure/obj/Debug/net8.0/LedgerLite.Infrastructure.csproj.CopyComplete
 /Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Infrastructure/obj/Debug/net8.0/LedgerLite.Infrastructure.dll
 /Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Infrastructure/obj/Debug/net8.0/refint/LedgerLite.Infrastructure.dll
 /Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Infrastructure/obj/Debug/net8.0/LedgerLite.Infrastructure.pdb
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Infrastructure/obj/Debug/net8.0/LedgerLite.Infrastructure.genruntimeconfig.cache
 /Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Infrastructure/obj/Debug/net8.0/ref/LedgerLite.Infrastructure.dll

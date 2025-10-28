@@ -8,6 +8,7 @@
 /Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/obj/Debug/net8.0/LedgerLite.Application.AssemblyInfoInputs.cache
 /Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/obj/Debug/net8.0/LedgerLite.Application.AssemblyInfo.cs
 /Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/obj/Debug/net8.0/LedgerLite.Application.csproj.CoreCompileInputs.cache
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/obj/Debug/net8.0/LedgerLite.Application.sourcelink.json
 /Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/obj/Debug/net8.0/LedgerLite.Application.csproj.CopyComplete
 /Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/obj/Debug/net8.0/LedgerLite.Application.dll
 /Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/obj/Debug/net8.0/refint/LedgerLite.Application.dll

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "odwAcK0hIoAiUb58Qs7+LxsDnoC7/njwFERA+7tVmbmPf5er8ABTrXNDRgNt/phhYPb8lcaIAIc5qWQbcOWpFw==",
+  "dgSpecHash": "LKBT9VTfG7g+7/PmN+Chj4t+TgV+iVN6c+IAu2tiBExppeyCN6H/odDxhcpybweVoPyT547/hV8OqYAkHo2LDQ==",
   "success": true,
   "projectFilePath": "/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/LedgerLite.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/davidk/.nuget/packages/microsoft.codeanalysis.netanalyzers/8.0.0/microsoft.codeanalysis.netanalyzers.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

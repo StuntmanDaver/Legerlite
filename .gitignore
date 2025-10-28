@@ -1,0 +1,107 @@
+# Dependencies
+*.csproj.user
+*.user
+*.sln.docstates
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+# Visual Studio 2022 / VS for Mac / VS Code
+.vs/
+!.vs/config/
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+excludefiles.end
+# Visual Studio Code files for those who are using Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+# Mono auto generated files
+mono_crash.*
+# Build Results
+**/bin/
+**/obj/
+**/packages/
+# NuGet Packages
+*.nupkg
+# NuGet Symbol Packages
+*.snupkg
+# Microsoft Azure Build Output
+csx/
+*.build.csdef
+# Microsoft Azure Emulator
+ecf/
+rcf/
+# Windows Store app package directory
+AppPackages/
+BundleArtifacts/
+Package.StoreAssociation.xml
+_pkginfo.txt
+# Visual Studio cache files
+# files ending in .cache can be ignored
+*.[Cc]ache
+# but keep track of directories ending in .cache
+!?*.[Cc]ache/
+# Others
+ClientBin/
+~$*
+*~
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.pfx
+*.publishsettings
+orleans.codegen.cs
+# Including strong-namers.
+# This includes the .snk, used to sign assemblies with strong names.
+*.snk
+# RIA/Silverlight projects
+Generated_Ria_Client_Files.cs
+**/.nuget/
+packages/
+# .NET
+*.dll
+*.exe
+*.exe~
+*.dll~
+*.pdb
+*.map
+# Generated files
+data/
+exports/
+TestResults/
+# Logs
+*.log
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+# For history of unencrypted git credentials
+.git-credentials

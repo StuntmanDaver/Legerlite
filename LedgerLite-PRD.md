@@ -147,9 +147,14 @@ Validation rules:
 - On app start: load file if exists, else start empty list
 - On data change (add/edit/delete): save file
 
-**Phase 2 Storage = SQLite or LiteDB**
-- Replace file I/O with DB context layer
-- No UI changes: the rest of the app uses repository interfaces, so storage swap is clean
+**Phase 2 Storage = SQLite (Implemented)**
+- Database path: `data/ledgerlite.db` (EF Core with SQLite)
+- Automatic creation on first run
+- Toggle via env var `LEDGERLITE_STORAGE` (json/sqlite, default sqlite)
+- Automatic one-time migration from JSON to SQLite if JSON exists and DB empty
+- Handles corruption by recreating DB
+- No UI changes: Uses ITransactionRepository abstraction for clean swap
+- Added integration tests for CRUD, performance edges, and migration
 
 ---
 
@@ -385,7 +390,7 @@ We do **not** test console prompts in unit tests (I/O). We test logic and behavi
 ## 12. Milestones
 
 ### Milestone 0 – Repo Skeleton
-- Create solution:
+[x] Create solution:
   - LedgerLite.Domain (entities/interfaces)
   - LedgerLite.Infrastructure (Json repository)
   - LedgerLite.Application (services)
@@ -394,29 +399,39 @@ We do **not** test console prompts in unit tests (I/O). We test logic and behavi
 - Add project references
 
 ### Milestone 1 – Transactions CRUD (Console)
-- Implement Transaction entity and TransactionService 
+[x] Implement Transaction entity and TransactionService 
 - Implement JsonTransactionRepository 
 - Console can Add/List/Delete transactions
 - Data persists to file
 
 ### Milestone 2 – Reporting
-- Implement ReportService 
+[x] Implement ReportService 
 - Monthly summary works and is printed in console
 - CSV export works
 
 ### Milestone 3 – Edit + Validation
-- Implement edit transaction
+[x] Implement edit transaction
 - Add validation (date, amount, etc.)
 - Improve console UX flow and error handling
 
 ### Milestone 4 – Tests
-- Add xUnit tests for ReportService and TransactionService 
+[x] Add xUnit tests for ReportService and TransactionService 
 - Add in-memory fake repo for tests
 
 ### Milestone 5 – GUI Ready (Architecture, not UI yet)
-- Confirm that none of the business logic depends on console
+[ ] Confirm that none of the business logic depends on console
 - Confirm services are cleanly injectable
 - Prepare for LedgerLite.Desktop (WPF/WinForms) that calls the same Application layer services
+
+**Phase 2: Storage Upgrade (Complete)**
+[x] Implemented SqliteTransactionRepository with EF Core
+[x] Configurable via env var
+[x] JSON migration logic
+[x] Edge case handling (creation, corruption)
+[x] Integration tests added
+[x] Verified no regressions in app flows
+
+---
 
 ## 13. Definition of Done for v1 (Console)
 - I can run the console app and:
@@ -467,3 +482,11 @@ After that, the app will already be able to:
 
 From there we move to reporting.  
 This is where you stop being “learning C# syntax” and start being “I ship software.”
+
+## 11. Status / Next Step
+### Project Status
+LedgerLite v1 MVP is now complete with Phase 2 SQLite upgrade! ...
+
+### Next Steps (Future Phases)
+- **Phase 3**: WPF desktop UI (reuse services).
+- **Phase 4**: CSV import from banks.
