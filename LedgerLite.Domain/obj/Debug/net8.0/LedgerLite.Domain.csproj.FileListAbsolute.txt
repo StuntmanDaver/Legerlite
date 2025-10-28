@@ -1,0 +1,11 @@
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Domain/bin/Debug/net8.0/LedgerLite.Domain.deps.json
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Domain/bin/Debug/net8.0/LedgerLite.Domain.dll
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Domain/bin/Debug/net8.0/LedgerLite.Domain.pdb
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Domain/obj/Debug/net8.0/LedgerLite.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Domain/obj/Debug/net8.0/LedgerLite.Domain.AssemblyInfoInputs.cache
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Domain/obj/Debug/net8.0/LedgerLite.Domain.AssemblyInfo.cs
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Domain/obj/Debug/net8.0/LedgerLite.Domain.csproj.CoreCompileInputs.cache
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Domain/obj/Debug/net8.0/LedgerLite.Domain.dll
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Domain/obj/Debug/net8.0/refint/LedgerLite.Domain.dll
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Domain/obj/Debug/net8.0/LedgerLite.Domain.pdb
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Domain/obj/Debug/net8.0/ref/LedgerLite.Domain.dll

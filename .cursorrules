@@ -1,0 +1,128 @@
+using LedgerLite.Domain; // No code, this is a rules file
+// LedgerLite .cursorrules
+// ========================================
+// This file defines the rules and guidelines for working on the LedgerLite project.
+// It ensures consistent architecture, code quality, and adherence to the PRD.
+// Follow these rules strictly to maintain separation of concerns and production-ready practices.
+
+// 1. PROJECT OVERVIEW
+// -------------------
+// LedgerLite is a local-first personal finance tracker in C#/.NET 8.
+// Core features: Add/edit/delete transactions, persist to JSON (Phase 1), generate monthly reports, export to CSV.
+// Architecture: Layered (Domain, Application, Infrastructure, CLI, Tests).
+// Non-goals: No cloud sync, auth, bank integrations, AI, mobile.
+// Goals: Clean, testable code with persistence abstraction for future SQLite/WPF upgrades.
+
+// 2. ARCHITECTURE GUIDELINES
+// -------------------------
+// Use strict layered architecture. Do not mix concerns.
+
+// 2.1 Domain Layer (LedgerLite.Domain)
+// - Contains pure domain models, entities, value objects, enums, and interfaces.
+// - No dependencies on other layers. No I/O, no UI, no external libs.
+// - Key types:
+//   - Transaction (Id: Guid, Date: DateTime, Description: string, Category: string, Amount: decimal > 0, Type: TransactionType)
+//   - TransactionType enum: Income, Expense
+//   - ITransactionRepository: Add, GetAll (sorted by Date desc), GetById, Update, Delete, etc.
+//   - IReportService: GenerateMonthlyReport(year, month) -> ReportResult (totals, top categories, count)
+// - Business rules here: Amount always positive; Income adds to balance, Expense subtracts.
+// - No JSON, files, console, or DB knowledge.
+
+// 2.2 Application Layer (LedgerLite.Application)
+// - Use case services coordinating domain logic.
+// - Depends on Domain only.
+// - Key types:
+//   - TransactionService: Handles CRUD via ITransactionRepository; applies validation.
+//   - ReportService: Aggregates transactions using LINQ; implements IReportService.
+// - Validation: Amount > 0, valid Date (YYYY-MM-DD), Type enum, non-empty Category/Description.
+// - No persistence details; use repositories.
+
+// 2.3 Infrastructure Layer (LedgerLite.Infrastructure)
+// - Implements interfaces from Domain.
+// - Handles I/O, persistence, external concerns.
+// - Phase 1: JsonTransactionRepository using System.Text.Json; file at data/transactions.json.
+//   - Load on init (handle missing/corrupt: warn, start empty).
+//   - Save on every change (full list serialization).
+// - CsvExporter: Write reports to exports/Report_YYYY_MM.csv; create dir if needed.
+// - Later: SqliteTransactionRepository (EF Core/LiteDB).
+// - Depends on Domain and Application.
+
+// 2.4 Presentation Layer (LedgerLite.CLI)
+// - Console UI only for v1.
+// - Menu-driven: 1.Add, 2.Edit, 3.Delete, 4.List (last 20), 5.Report, 6.Export, 7.Quit.
+// - Input parsing: Prompt for fields; reprompt on invalid (e.g., non-numeric amount, bad date).
+// - Display: Table format for lists (short ID, Date, Type, Category, Amount, Desc); text for reports.
+// - Calls Application services; handles exceptions gracefully (no crashes).
+// - Depends on Application.
+// - No business logic; convert strings to models.
+
+// 2.5 Tests (LedgerLite.Tests)
+// - xUnit; no integration tests for UI/I/O.
+// - Test Domain/Application logic with in-memory fakes (FakeTransactionRepository).
+// - Cover: CRUD validation, report calculations (totals, filtering, top 3 categories), JSON round-trip.
+// - Assertions: Use built-in or FluentAssertions; verify decimals/dates precise.
+
+// 3. FILE ORGANIZATION & NAMING
+// ----------------------------
+// Solution: LedgerLite.sln
+// Projects as above; add references: CLI -> Application -> Domain; Infrastructure -> Domain + Application; Tests -> all except CLI.
+// Naming:
+// - Classes: PascalCase (e.g., TransactionService)
+// - Interfaces: I + PascalCase (e.g., ITransactionRepository)
+// - Methods: PascalCase, descriptive (e.g., AddTransaction)
+// - Properties/Fields: PascalCase; private fields: _camelCase
+// - Enums: PascalCase values
+// - Files: Match class name + .cs
+// Paths:
+// - Data: data/transactions.json (create dir if needed)
+// - Exports: exports/Report_YYYY_MM.csv
+// No duplicate files; check for consistency.
+
+// 4. CODING STANDARDS
+// -------------------
+// - C# 12+ features (primary constructors, etc.) where beneficial.
+// - Use records for immutable data (e.g., ReportResult).
+// - LINQ for queries/aggregations; no loops where LINQ fits.
+// - Decimal for money; avoid double/float.
+// - Dates: DateTime; parse with TryParseExact (format: yyyy-MM-dd).
+// - GUIDs: Use Guid.NewGuid() for Ids.
+// - Error handling: Throw domain exceptions (e.g., InvalidAmountException); catch in CLI, show user-friendly messages.
+// - Logging: None for v1; console output only.
+// - Comments: Minimal; use XML docs for public members.
+// - No unused using statements; format with dotnet format.
+// - Imports: System.Text.Json; no NuGet until needed (e.g., xUnit via test project).
+
+// 5. VALIDATION & ERROR HANDLING
+// ------------------------------
+// - Transaction: Amount > 0, Date parseable, Type valid enum, strings non-empty/trimmed.
+// - Reports: Filter by year/month; handle no data (zeros, empty top categories).
+// - Persistence: On load fail -> warn "Data file unreadable, starting empty."; continue.
+// - UI: Reprompt on invalid input; confirm deletes (y/n).
+// - No crashes; graceful degradation.
+
+// 6. DEVELOPMENT PRACTICES
+// ------------------------
+// - Minimal changes: Only implement requested feature; no refactors unless specified.
+// - Clarify scope: Before coding, outline plan (files, methods, why).
+// - Precise edits: Target exact files/lines; justify multi-file changes.
+// - Double-check: Verify no regressions, follows patterns, lints clean.
+// - Testing: Write tests for new logic immediately; run dotnet test.
+// - Milestones: Follow PRD order (0: Skeleton, 1: CRUD, 2: Reports, etc.).
+// - No extras: No logging, TODOs, comments, undo, custom categories unless stretch goal activated.
+// - Deliver: Summarize changes (files modified, what/why); flag assumptions/risks.
+
+// 7. TOOL USAGE IN CURSOR
+// -----------------------
+// - Use codebase_search for architecture questions (e.g., "Where is persistence handled?").
+// - edit_file for changes; read_file first if unsure.
+// - run_terminal_cmd for dotnet build/test/run.
+// - todo_write for multi-step tasks.
+// - Adhere to user rules: Plan first, minimal edits, double-check.
+
+// 8. FUTURE-PROOFING
+// ------------------
+// - Design for swaps: UI (CLI -> WPF), Storage (JSON -> SQLite) without core changes.
+// - Interfaces first; implement minimally.
+// - No hard-coded paths; use config (e.g., FileStorageConfig).
+
+// Violations of these rules will break the project's integrity. Always reference this file.

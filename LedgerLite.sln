@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LedgerLite.Domain", "LedgerLite.Domain\LedgerLite.Domain.csproj", "{8F81B1C9-A9E1-4A84-901A-DD326D6803AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LedgerLite.Application", "LedgerLite.Application\LedgerLite.Application.csproj", "{C2901C03-FF88-48CD-9905-D36D0BC72B52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LedgerLite.Infrastructure", "LedgerLite.Infrastructure\LedgerLite.Infrastructure.csproj", "{7CBC17A9-7184-4C52-BC2C-7A74ECD78505}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LedgerLite.CLI", "LedgerLite.CLI\LedgerLite.CLI.csproj", "{9BD53A32-E174-4CA7-AE73-6CC6AEF86CF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LedgerLite.Tests", "LedgerLite.Tests\LedgerLite.Tests.csproj", "{9A6CE389-575C-48D7-BAC3-AC40E20179CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8F81B1C9-A9E1-4A84-901A-DD326D6803AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F81B1C9-A9E1-4A84-901A-DD326D6803AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F81B1C9-A9E1-4A84-901A-DD326D6803AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F81B1C9-A9E1-4A84-901A-DD326D6803AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2901C03-FF88-48CD-9905-D36D0BC72B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2901C03-FF88-48CD-9905-D36D0BC72B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2901C03-FF88-48CD-9905-D36D0BC72B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2901C03-FF88-48CD-9905-D36D0BC72B52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CBC17A9-7184-4C52-BC2C-7A74ECD78505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CBC17A9-7184-4C52-BC2C-7A74ECD78505}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CBC17A9-7184-4C52-BC2C-7A74ECD78505}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CBC17A9-7184-4C52-BC2C-7A74ECD78505}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BD53A32-E174-4CA7-AE73-6CC6AEF86CF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BD53A32-E174-4CA7-AE73-6CC6AEF86CF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BD53A32-E174-4CA7-AE73-6CC6AEF86CF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BD53A32-E174-4CA7-AE73-6CC6AEF86CF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A6CE389-575C-48D7-BAC3-AC40E20179CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A6CE389-575C-48D7-BAC3-AC40E20179CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A6CE389-575C-48D7-BAC3-AC40E20179CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A6CE389-575C-48D7-BAC3-AC40E20179CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,15 @@
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/bin/Debug/net8.0/LedgerLite.Application.deps.json
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/bin/Debug/net8.0/LedgerLite.Application.dll
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/bin/Debug/net8.0/LedgerLite.Application.pdb
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/bin/Debug/net8.0/LedgerLite.Domain.dll
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/bin/Debug/net8.0/LedgerLite.Domain.pdb
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/obj/Debug/net8.0/LedgerLite.Application.csproj.AssemblyReference.cache
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/obj/Debug/net8.0/LedgerLite.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/obj/Debug/net8.0/LedgerLite.Application.AssemblyInfoInputs.cache
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/obj/Debug/net8.0/LedgerLite.Application.AssemblyInfo.cs
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/obj/Debug/net8.0/LedgerLite.Application.csproj.CoreCompileInputs.cache
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/obj/Debug/net8.0/LedgerLite.Application.csproj.CopyComplete
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/obj/Debug/net8.0/LedgerLite.Application.dll
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/obj/Debug/net8.0/refint/LedgerLite.Application.dll
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/obj/Debug/net8.0/LedgerLite.Application.pdb
+/Users/davidk/Documents/App Ideas /LegerLight personal finance tracker /LedgerLite.Application/obj/Debug/net8.0/ref/LedgerLite.Application.dll
